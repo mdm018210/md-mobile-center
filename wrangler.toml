@@ -1,0 +1,8 @@
+name = "md-mobile-center"
+compatibility_date = "2026-09-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "md-mobile-center"
+database_id = "INSERISCI-IL-DATABASE-ID"
