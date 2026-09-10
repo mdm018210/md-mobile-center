@@ -1,0 +1,8 @@
+CATALOGO MD MOBILE CENTER
+
+1) Sostituisci products.json con quello qui presente.
+2) Carica la cartella assets/products/ dentro la cartella assets/ del progetto GitHub.
+3) Le foto sono già abbinate ai modelli.
+4) Non modificare carrello.html.
+
+Nota: A17 256 GB è stato interpretato come 256 GB di memoria e 6 GB RAM, in base alla tua indicazione.

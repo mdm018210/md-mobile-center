@@ -1,47 +1,500 @@
 [
   {
-    "id": "iphone-15-pro-128",
-    "name": "iPhone 15 Pro",
+    "id": "iphone-11-128",
+    "name": "iPhone 11",
     "storage": "128 GB",
-    "color": "Titanio",
-    "condition": "Nuovo",
-    "price": 1099,
-    "image": ""
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 250,
+    "image": "/assets/products/iphone/iphone 11.avif",
+    "warranty": "6 mesi di garanzia"
   },
   {
-    "id": "samsung-s24-256",
-    "name": "Samsung Galaxy S24",
+    "id": "iphone-11-pro-max-256-used",
+    "name": "iPhone 11 Pro Max",
     "storage": "256 GB",
-    "color": "Nero",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 399,
+    "image": "/assets/products/iphone/iphone 11 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-11-pro-max-256-new",
+    "name": "iPhone 11 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
     "condition": "Nuovo",
-    "price": 899,
-    "image": ""
+    "price": 450,
+    "image": "/assets/products/iphone/iphone 11 pro max.avif",
+    "warranty": "1 anno di garanzia"
+  },
+  {
+    "id": "iphone-12-128",
+    "name": "iPhone 12",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 370,
+    "image": "/assets/products/iphone/iphone 12.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-12-256",
+    "name": "iPhone 12",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 420,
+    "image": "/assets/products/iphone/iphone 12.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-12-pro-max-128",
+    "name": "iPhone 12 Pro Max",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 480,
+    "image": "/assets/products/iphone/iphone 12 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-12-pro-max-256",
+    "name": "iPhone 12 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 530,
+    "image": "/assets/products/iphone/iphone 12 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-13-128",
+    "name": "iPhone 13",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 370,
+    "image": "/assets/products/iphone/iphone 13.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-13-256",
+    "name": "iPhone 13",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 420,
+    "image": "/assets/products/iphone/iphone 13.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-13-pro-max-256GB",
+    "name": "iPhone 13 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 570,
+    "image": "/assets/products/iphone/iphone 13 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-13-pro-max-1TB",
+    "name": "iPhone 13 Pro Max",
+    "storage": "1 TB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 620,
+    "image": "/assets/products/iphone/iphone 13 pro max.avif",
+    "warranty": "6 mesi di garanzia"
   },
   {
     "id": "iphone-14-128",
     "name": "iPhone 14",
     "storage": "128 GB",
-    "color": "Blu",
-    "condition": "Usato (come nuovo)",
-    "price": 679,
-    "image": ""
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 430,
+    "image": "/assets/products/iphone/iphone 14.avif",
+    "warranty": "6 mesi di garanzia"
   },
   {
-    "id": "redmi-note-13-128",
-    "name": "Xiaomi Redmi Note 13",
+    "id": "iphone-14-256",
+    "name": "iPhone 14",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 470,
+    "image": "/assets/products/iphone/iphone 14.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-14-pro-128",
+    "name": "iPhone 14 Pro",
     "storage": "128 GB",
-    "color": "Nero",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 570,
+    "image": "/assets/products/iphone/iphone 14 pro.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-14-pro-256",
+    "name": "iPhone 14 Pro",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 620,
+    "image": "/assets/products/iphone/iphone 14 pro.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-14-pro-max-256",
+    "name": "iPhone 14 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 750,
+    "image": "/assets/products/iphone/iphone 14 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-15-128",
+    "name": "iPhone 15",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 470,
+    "image": "/assets/products/iphone/iphone 15.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-15-256",
+    "name": "iPhone 15",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 620,
+    "image": "/assets/products/iphone/iphone 15.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-15-pro-128",
+    "name": "iPhone 15 Pro",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 750,
+    "image": "/assets/products/iphone/iphone 15 pro.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-15-pro-256",
+    "name": "iPhone 15 Pro",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 820,
+    "image": "/assets/products/iphone/iphone 15 pro.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-15-plus-128",
+    "name": "iPhone 15 Plus",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 680,
+    "image": "/assets/products/iphone/iphone 15 plus.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-15-pro-max-256",
+    "name": "iPhone 15 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 950,
+    "image": "/assets/products/iphone/iphone 15 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-16-128",
+    "name": "iPhone 16",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 699,
+    "image": "/assets/products/iphone/iphone 16.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-16-pro-max-256-new",
+    "name": "iPhone 16 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
     "condition": "Nuovo",
-    "price": 249,
-    "image": ""
+    "price": 1150,
+    "image": "/assets/products/iphone/iphone 16 pro max.avif",
+    "warranty": "1 anno di garanzia"
   },
   {
-    "id": "galaxy-a54-128",
-    "name": "Samsung Galaxy A54",
+    "id": "iphone-16-pro-max-256-used",
+    "name": "iPhone 16 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 970,
+    "image": "/assets/products/iphone/iphone 16 pro max.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-16-plus-128",
+    "name": "iPhone 16 Plus",
     "storage": "128 GB",
-    "color": "Viola",
-    "condition": "Usato (ottimo)",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 679,
+    "image": "/assets/products/iphone/iphone 16 plus.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-16-pro-256",
+    "name": "iPhone 16 Pro",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Usato certificato – ottime condizioni",
+    "price": 999,
+    "image": "/assets/products/iphone/iphone 16 pro.avif",
+    "warranty": "6 mesi di garanzia"
+  },
+  {
+    "id": "iphone-17-256",
+    "name": "iPhone 17",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 999,
+    "image": "/assets/products/iphone/iphone 17.avif",
+    "warranty": "1 anno di garanzia"
+  },
+  {
+    "id": "iphone-17-pro-256",
+    "name": "iPhone 17 Pro",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 1150,
+    "image": "/assets/products/iphone/iphone 17 pro.avif",
+    "warranty": "1 anno di garanzia"
+  },
+  {
+    "id": "iphone-17-pro-max-256",
+    "name": "iPhone 17 Pro Max",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 1370,
+    "image": "/assets/products/iphone/iphone 17 pro max.avif",
+    "warranty": "1 anno di garanzia"
+  },
+  {
+    "id": "samsung-a07-128",
+    "name": "Samsung Galaxy A07",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 190,
+    "image": "/assets/products/samsung/samsung a07.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "4 GB"
+  },
+  {
+    "id": "samsung-a16-128",
+    "name": "Samsung Galaxy A16",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 220,
+    "image": "/assets/products/samsung/samsung a 16.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "4 GB"
+  },
+  {
+    "id": "samsung-a17-128",
+    "name": "Samsung Galaxy A17",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 250,
+    "image": "/assets/products/samsung/samsung a 17.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "4 GB"
+  },
+  {
+    "id": "samsung-a17-256",
+    "name": "Samsung Galaxy A17",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 279,
+    "image": "/assets/products/samsung/samsung a 17.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "6 GB"
+  },
+  {
+    "id": "samsung-a26-128",
+    "name": "Samsung Galaxy A26",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
     "price": 299,
-    "image": ""
+    "image": "/assets/products/samsung/samsung a 26.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "6 GB"
+  },
+  {
+    "id": "samsung-a57-256",
+    "name": "Samsung Galaxy A57",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 450,
+    "image": "/assets/products/samsung/samsung a57.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "8 GB"
+  },
+  {
+    "id": "samsung-a27-128",
+    "name": "Samsung Galaxy A27",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 299,
+    "image": "/assets/products/samsung/samsung a27.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "6 GB"
+  },
+  {
+    "id": "samsung-a27-256",
+    "name": "Samsung Galaxy A27",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 370,
+    "image": "/assets/products/samsung/samsung a27.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "8 GB"
+  },
+  {
+    "id": "samsung-a36-128",
+    "name": "Samsung Galaxy A36",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 350,
+    "image": "/assets/products/samsung/samsung a36.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "6 GB"
+  },
+  {
+    "id": "samsung-a37-128",
+    "name": "Samsung Galaxy A37",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 380,
+    "image": "/assets/products/samsung/samsung a 37.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "6 GB"
+  },
+  {
+    "id": "samsung-a56-128",
+    "name": "Samsung Galaxy A56",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 380,
+    "image": "/assets/products/samsung/samsung a 56.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "8 GB"
+  },
+  {
+    "id": "samsung-xcover7-128",
+    "name": "Samsung Galaxy XCover7",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 299,
+    "image": "/assets/products/samsung/samsung xcover7.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "6 GB"
+  },
+  {
+    "id": "samsung-s25-128",
+    "name": "Samsung Galaxy S25",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 599,
+    "image": "/assets/products/samsung/samsung s25.jpg",
+    "warranty": "1 anno di garanzia",
+    "ram": "12 GB"
+  },
+  {
+    "id": "samsung-s25-edge-256",
+    "name": "Samsung Galaxy S25 Edge",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 619,
+    "image": "/assets/products/samsung/samsung s25 edge.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "12 GB"
+  },
+  {
+    "id": "samsung-s26-128",
+    "name": "Samsung Galaxy S26",
+    "storage": "128 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 749,
+    "image": "/assets/products/samsung/samsung s26.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "12 GB"
+  },
+  {
+    "id": "samsung-s26-256",
+    "name": "Samsung Galaxy S26",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 779,
+    "image": "/assets/products/samsung/samsung s26.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "12 GB"
+  },
+  {
+    "id": "samsung-s26-ultra-256",
+    "name": "Samsung Galaxy S26 Ultra",
+    "storage": "256 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 1250,
+    "image": "/assets/products/samsung/samsung s26 ultra.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "12 GB"
+  },
+  {
+    "id": "samsung-s26-ultra-512",
+    "name": "Samsung Galaxy S26 Ultra",
+    "storage": "512 GB",
+    "color": "Tutte le colorazioni",
+    "condition": "Nuovo",
+    "price": 1450,
+    "image": "/assets/products/samsung/samsung s26 ultra.avif",
+    "warranty": "1 anno di garanzia",
+    "ram": "12 GB"
   }
 ]
