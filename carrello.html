@@ -40,11 +40,8 @@ function render() {
   let box = document.getElementById('cart');
 
   if (!c.length) {
-
     box.innerHTML = '<p>Il carrello è vuoto.</p>';
-
     document.getElementById('checkout').innerHTML = '';
-
     return;
   }
 
@@ -68,9 +65,7 @@ function render() {
         })}
       </strong>
 
-      <button onclick="removeItem('${i.id}')">
-        ✕
-      </button>
+      <button onclick="removeItem('${i.id}')">✕</button>
 
     </div>
   `).join('');
@@ -91,8 +86,8 @@ function render() {
       <h2>🏦 Pagamento con bonifico bancario</h2>
 
       <p>
-        Per completare l'ordine effettua il bonifico
-        utilizzando i dati riportati qui sotto.
+        Per completare l'ordine invia il bonifico dopo aver ricevuto
+        la conferma.
       </p>
 
       <p>
@@ -119,22 +114,7 @@ function render() {
 
     <h2>Dati per la consegna</h2>
 
-    <form
-      id="order-form"
-      name="ordini"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-    >
-
-      <input type="hidden" name="form-name" value="ordini">
-
-      <p style="display:none;">
-        <label>
-          Non compilare:
-          <input name="bot-field">
-        </label>
-      </p>
+    <form id="order-form">
 
       <input
         name="nome"
@@ -173,32 +153,15 @@ function render() {
         placeholder="Città"
       >
 
-      <input
-        type="hidden"
-        name="prodotti"
-        id="prodotti"
-      >
-
-      <input
-        type="hidden"
-        name="totale"
-        id="totale"
-      >
-
-      <button
-        class="btn pay"
-        type="submit"
-      >
+      <button class="btn pay" type="submit">
         CONFERMA ORDINE
       </button>
 
       <p class="note">
-        L'ordine verrà preso in carico dopo la ricezione
-        del bonifico.
+        L'ordine verrà preso in carico dopo la ricezione del bonifico.
       </p>
 
     </form>
-
   `;
 
   document
@@ -222,7 +185,7 @@ function removeItem(id) {
 }
 
 
-async function submitOrder(e) {
+function submitOrder(e) {
 
   e.preventDefault();
 
@@ -233,9 +196,7 @@ async function submitOrder(e) {
   );
 
   if (!c.length) {
-
     alert('Il carrello è vuoto.');
-
     return;
   }
 
@@ -244,80 +205,121 @@ async function submitOrder(e) {
     0
   );
 
-  const prodotti = c.map(
-    i => `${i.name} x${i.qty}`
-  ).join(', ');
+  const prodotti = c
+    .map(i => `${i.name} x${i.qty}`)
+    .join(', ');
 
-  document.getElementById('prodotti').value = prodotti;
 
-  document.getElementById('totale').value =
-    `€ ${total.toFixed(2)}`;
+  const netlifyForm =
+    document.getElementById('netlify-order-form');
 
-  const data = new URLSearchParams();
 
-  data.append('form-name', 'ordini');
+  netlifyForm.querySelector(
+    '[name="nome"]'
+  ).value = form.nome.value;
 
-  data.append('nome', form.nome.value);
 
-  data.append('email', form.email.value);
+  netlifyForm.querySelector(
+    '[name="email"]'
+  ).value = form.email.value;
 
-  data.append('telefono', form.telefono.value);
 
-  data.append('indirizzo', form.indirizzo.value);
+  netlifyForm.querySelector(
+    '[name="telefono"]'
+  ).value = form.telefono.value;
 
-  data.append('cap', form.cap.value);
 
-  data.append('citta', form.citta.value);
+  netlifyForm.querySelector(
+    '[name="indirizzo"]'
+  ).value = form.indirizzo.value;
 
-  data.append('prodotti', prodotti);
 
-  data.append(
-    'totale',
-    `€ ${total.toFixed(2)}`
-  );
+  netlifyForm.querySelector(
+    '[name="cap"]'
+  ).value = form.cap.value;
 
-  try {
 
-    const response = await fetch('/', {
+  netlifyForm.querySelector(
+    '[name="citta"]'
+  ).value = form.citta.value;
 
-      method: 'POST',
 
-      headers: {
-        'Content-Type':
-          'application/x-www-form-urlencoded'
-      },
+  netlifyForm.querySelector(
+    '[name="prodotti"]'
+  ).value = prodotti;
 
-      body: data.toString()
 
-    });
+  netlifyForm.querySelector(
+    '[name="totale"]'
+  ).value = `€ ${total.toFixed(2)}`;
 
-    if (!response.ok) {
 
-      throw new Error(
-        'Errore durante l’invio dell’ordine'
-      );
+  localStorage.removeItem('mdcart');
 
-    }
-
-    localStorage.removeItem('mdcart');
-
-    location.href = '/ordine-ok.html';
-
-  } catch (error) {
-
-    console.error(error);
-
-    alert(
-      'Non è stato possibile inviare l’ordine. Riprova.'
-    );
-
-  }
-
+  netlifyForm.submit();
 }
 
 render();
 
 </script>
+
+
+<!-- MODULO NETLIFY -->
+
+<form
+  id="netlify-order-form"
+  name="ordini"
+  method="POST"
+  action="/ordine-ok.html"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  hidden
+>
+
+  <input
+    type="text"
+    name="bot-field"
+  >
+
+  <input
+    type="hidden"
+    name="form-name"
+    value="ordini"
+  >
+
+  <input
+    name="nome"
+  >
+
+  <input
+    name="email"
+  >
+
+  <input
+    name="telefono"
+  >
+
+  <input
+    name="indirizzo"
+  >
+
+  <input
+    name="cap"
+  >
+
+  <input
+    name="citta"
+  >
+
+  <input
+    name="prodotti"
+  >
+
+  <input
+    name="totale"
+  >
+
+</form>
 
 </body>
 </html>
