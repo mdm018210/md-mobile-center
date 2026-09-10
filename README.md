@@ -1,49 +1,23 @@
-# MD Mobile Center — e-commerce starter
+# MD Mobile Center — versione Netlify + bonifico
 
-## Cosa c'è già
-- Homepage nello stile nero/giallo del progetto.
-- Catalogo prodotti da `products.json`.
-- Carrello in browser.
-- Checkout Stripe con carta.
-- Pagina di ordine completato.
-- Pagine legali segnaposto.
-- Struttura pronta per Cloudflare Pages/Functions.
+Questa versione è predisposta per Netlify e usa esclusivamente il pagamento tramite bonifico bancario.
 
-## Per attivare i pagamenti
-1. Crea un account Stripe Business.
-2. In Cloudflare Pages aggiungi la variabile segreta `STRIPE_SECRET_KEY`.
-3. Pubblica il progetto.
-4. Sostituisci i prodotti demo in `products.json` con i tuoi prodotti e prezzi reali.
-5. Per un vero pannello ordini/notifiche email, aggiungi una funzione webhook Stripe + database (D1) e un provider email (es. Resend). Non inserire mai la chiave Stripe nel codice del browser.
+## Pagamento
+- Intestatario: MD MOBILE CENTER
+- IBAN: IT70W0801620800000041450797
+- Banca: CASSA RURALE
+- Causale: inserire il modello di telefono
+
+Non servono Stripe, chiavi API o abbonamenti a servizi di pagamento.
+
+## Ordini
+Gli ordini vengono inviati tramite Netlify Forms. Dopo il deploy, controlla la sezione **Moduli** del progetto Netlify per vedere gli ordini ricevuti e configurare le notifiche email.
+
+## Prodotti
+I prodotti demo sono nel file `products.json`. Le foto e i prezzi reali possono essere inseriti successivamente.
 
 ## Importante
-I testi legali presenti sono solo segnaposto e vanno adattati alla tua attività con un professionista.
+Le pagine Privacy, Cookie, Termini e Recesso presenti nel progetto sono segnaposto e devono essere completate con i dati reali dell'attività e, se necessario, verificate da un professionista.
 
-## Ordini e avvisi
-Il progetto include anche:
-- webhook Stripe per registrare gli ordini;
-- database Cloudflare D1;
-- pannello `/admin.html`;
-- notifica email via Resend.
-
-### Variabili segrete da impostare in Cloudflare Pages
-- `STRIPE_SECRET_KEY`
-- `STRIPE_WEBHOOK_SECRET`
-- `ADMIN_PASSWORD`
-- `RESEND_API_KEY` (se vuoi l'email automatica)
-- `ORDER_NOTIFY_EMAIL` (la tua email per gli avvisi)
-- `EMAIL_FROM` (mittente verificato su Resend, opzionale)
-
-### D1
-Crea un database D1, inserisci il suo ID in `wrangler.toml`, poi esegui `schema.sql` sul database.
-
-### Stripe webhook
-Dopo la pubblicazione, crea in Stripe un endpoint verso:
-`https://TUO-SITO.it/api/stripe-webhook`
-e abilita almeno l'evento `checkout.session.completed`. Copia il signing secret nella variabile `STRIPE_WEBHOOK_SECRET`.
-
-### Prima della pubblicazione
-- Sostituisci i prodotti demo con prodotti reali.
-- Inserisci le foto reali dei telefoni.
-- Completa i testi legali con i dati della tua attività.
-- Configura spedizioni, IVA e condizioni di vendita secondo la tua situazione fiscale.
+## Nome del progetto
+Il nome consigliato su Netlify è `mdmobilecenter`. Il nome del progetto Netlify e il relativo indirizzo `.netlify.app` si cambiano dalla configurazione del progetto, non da questo codice.
