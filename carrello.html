@@ -1,62 +1,323 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carrello | MD Mobile Center</title><link rel="stylesheet" href="/styles.css"></head><body>
-<header class="header"><a class="brand" href="/"><img src="/assets/logo-md.jpg"><div><strong>MD MOBILE CENTER</strong><small>VENDITA • ASSISTENZA • RIPARAZIONI</small></div></a><a class="btn small" href="/">← Continua acquisti</a></header>
-<main class="checkout-page"><h1>Il tuo carrello</h1><div id="cart"></div><div id="checkout"></div></main>
-<script>
-function render(){
-  let c=JSON.parse(localStorage.getItem('mdcart')||'[]');
-  let box=document.getElementById('cart');
-  if(!c.length){box.innerHTML='<p>Il carrello è vuoto.</p>';document.getElementById('checkout').innerHTML='';return}
-  let total=c.reduce((s,i)=>s+i.price*i.qty,0);
-  box.innerHTML=c.map(i=>`<div class="cart-row"><div><b>${i.name}</b><small>${i.storage} • ${i.condition}</small></div><div>Q.tà ${i.qty}</div><strong>€ ${(i.price*i.qty).toLocaleString('it-IT',{minimumFractionDigits:2})}</strong><button onclick="removeItem('${i.id}')">✕</button></div>`).join('');
-  document.getElementById('checkout').innerHTML=`
-    <div class="total">Totale <b>€ ${total.toLocaleString('it-IT',{minimumFractionDigits:2})}</b></div>
-    <div class="bank-box">
-      <h2>🏦 Pagamento con bonifico bancario</h2>
-      <p>Per completare l'ordine invia il bonifico dopo aver ricevuto la conferma.</p>
-      <p><b>Intestatario:</b> MD MOBILE CENTER</p>
-      <p><b>IBAN:</b> IT70W0801620800000041450797</p>
-      <p><b>Banca:</b> CASSA RURALE</p>
-      <p><b>Causale:</b> inserire il modello di telefono</p>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carrello | MD Mobile Center</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <a class="brand" href="/">
+    <img src="/assets/logo-md.jpg">
+    <div>
+      <strong>MD MOBILE CENTER</strong>
+      <small>VENDITA • ASSISTENZA • RIPARAZIONI</small>
     </div>
+  </a>
+
+  <a class="btn small" href="/">← Continua acquisti</a>
+</header>
+
+<main class="checkout-page">
+
+  <h1>Il tuo carrello</h1>
+
+  <div id="cart"></div>
+
+  <div id="checkout"></div>
+
+</main>
+
+<script>
+
+function render() {
+
+  let c = JSON.parse(localStorage.getItem('mdcart') || '[]');
+
+  let box = document.getElementById('cart');
+
+  if (!c.length) {
+
+    box.innerHTML = '<p>Il carrello è vuoto.</p>';
+
+    document.getElementById('checkout').innerHTML = '';
+
+    return;
+  }
+
+  let total = c.reduce((s, i) => s + i.price * i.qty, 0);
+
+  box.innerHTML = c.map(i => `
+    <div class="cart-row">
+
+      <div>
+        <b>${i.name}</b>
+        <small>${i.storage} • ${i.condition}</small>
+      </div>
+
+      <div>
+        Q.tà ${i.qty}
+      </div>
+
+      <strong>
+        € ${(i.price * i.qty).toLocaleString('it-IT', {
+          minimumFractionDigits: 2
+        })}
+      </strong>
+
+      <button onclick="removeItem('${i.id}')">
+        ✕
+      </button>
+
+    </div>
+  `).join('');
+
+  document.getElementById('checkout').innerHTML = `
+
+    <div class="total">
+      Totale
+      <b>
+        € ${total.toLocaleString('it-IT', {
+          minimumFractionDigits: 2
+        })}
+      </b>
+    </div>
+
+    <div class="bank-box">
+
+      <h2>🏦 Pagamento con bonifico bancario</h2>
+
+      <p>
+        Per completare l'ordine effettua il bonifico
+        utilizzando i dati riportati qui sotto.
+      </p>
+
+      <p>
+        <b>Intestatario:</b>
+        MD MOBILE CENTER
+      </p>
+
+      <p>
+        <b>IBAN:</b>
+        IT70W0801620800000041450797
+      </p>
+
+      <p>
+        <b>Banca:</b>
+        CASSA RURALE
+      </p>
+
+      <p>
+        <b>Causale:</b>
+        inserire il modello di telefono
+      </p>
+
+    </div>
+
     <h2>Dati per la consegna</h2>
-    <form id="order-form">
-      <input name="nome" required placeholder="Nome e cognome">
-      <input name="email" type="email" required placeholder="Email">
-      <input name="telefono" required placeholder="Telefono">
-      <input name="indirizzo" required placeholder="Indirizzo di consegna">
-      <input name="cap" required placeholder="CAP">
-      <input name="citta" required placeholder="Città">
-      <button class="btn pay" type="submit">CONFERMA ORDINE</button>
-      <p class="note">L'ordine verrà preso in carico dopo la ricezione del bonifico.</p>
-    </form>`;
-  document.getElementById('order-form').addEventListener('submit', submitOrder);
+
+    <form
+      id="order-form"
+      name="ordini"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+
+      <input type="hidden" name="form-name" value="ordini">
+
+      <p style="display:none;">
+        <label>
+          Non compilare:
+          <input name="bot-field">
+        </label>
+      </p>
+
+      <input
+        name="nome"
+        required
+        placeholder="Nome e cognome"
+      >
+
+      <input
+        name="email"
+        type="email"
+        required
+        placeholder="Email"
+      >
+
+      <input
+        name="telefono"
+        required
+        placeholder="Telefono"
+      >
+
+      <input
+        name="indirizzo"
+        required
+        placeholder="Indirizzo di consegna"
+      >
+
+      <input
+        name="cap"
+        required
+        placeholder="CAP"
+      >
+
+      <input
+        name="citta"
+        required
+        placeholder="Città"
+      >
+
+      <input
+        type="hidden"
+        name="prodotti"
+        id="prodotti"
+      >
+
+      <input
+        type="hidden"
+        name="totale"
+        id="totale"
+      >
+
+      <button
+        class="btn pay"
+        type="submit"
+      >
+        CONFERMA ORDINE
+      </button>
+
+      <p class="note">
+        L'ordine verrà preso in carico dopo la ricezione
+        del bonifico.
+      </p>
+
+    </form>
+
+  `;
+
+  document
+    .getElementById('order-form')
+    .addEventListener('submit', submitOrder);
 }
-function removeItem(id){let c=JSON.parse(localStorage.getItem('mdcart')||'[]').filter(x=>x.id!==id);localStorage.setItem('mdcart',JSON.stringify(c));render()}
-async function submitOrder(e){
+
+
+function removeItem(id) {
+
+  let c = JSON.parse(
+    localStorage.getItem('mdcart') || '[]'
+  ).filter(x => x.id !== id);
+
+  localStorage.setItem(
+    'mdcart',
+    JSON.stringify(c)
+  );
+
+  render();
+}
+
+
+async function submitOrder(e) {
+
   e.preventDefault();
-  const form=e.target;
-  const c=JSON.parse(localStorage.getItem('mdcart')||'[]');
-  const total=c.reduce((s,i)=>s+i.price*i.qty,0);
-  const data=new URLSearchParams();
-  data.append('form-name','ordini');
-  data.append('nome',form.nome.value);
-  data.append('email',form.email.value);
-  data.append('telefono',form.telefono.value);
-  data.append('indirizzo',form.indirizzo.value);
-  data.append('cap',form.cap.value);
-  data.append('citta',form.citta.value);
-  data.append('prodotti',c.map(i=>`${i.name} x${i.qty}`).join(', '));
-  data.append('totale',`€ ${total.toFixed(2)}`);
-  try{
-    const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data.toString()});
-    if(!r.ok) throw new Error();
+
+  const form = e.target;
+
+  const c = JSON.parse(
+    localStorage.getItem('mdcart') || '[]'
+  );
+
+  if (!c.length) {
+
+    alert('Il carrello è vuoto.');
+
+    return;
+  }
+
+  const total = c.reduce(
+    (s, i) => s + i.price * i.qty,
+    0
+  );
+
+  const prodotti = c.map(
+    i => `${i.name} x${i.qty}`
+  ).join(', ');
+
+  document.getElementById('prodotti').value = prodotti;
+
+  document.getElementById('totale').value =
+    `€ ${total.toFixed(2)}`;
+
+  const data = new URLSearchParams();
+
+  data.append('form-name', 'ordini');
+
+  data.append('nome', form.nome.value);
+
+  data.append('email', form.email.value);
+
+  data.append('telefono', form.telefono.value);
+
+  data.append('indirizzo', form.indirizzo.value);
+
+  data.append('cap', form.cap.value);
+
+  data.append('citta', form.citta.value);
+
+  data.append('prodotti', prodotti);
+
+  data.append(
+    'totale',
+    `€ ${total.toFixed(2)}`
+  );
+
+  try {
+
+    const response = await fetch('/', {
+
+      method: 'POST',
+
+      headers: {
+        'Content-Type':
+          'application/x-www-form-urlencoded'
+      },
+
+      body: data.toString()
+
+    });
+
+    if (!response.ok) {
+
+      throw new Error(
+        'Errore durante l’invio dell’ordine'
+      );
+
+    }
+
     localStorage.removeItem('mdcart');
-    location.href='/ordine-ok.html';
-  }catch(err){alert('Non è stato possibile inviare l’ordine. Riprova.');}
+
+    location.href = '/ordine-ok.html';
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert(
+      'Non è stato possibile inviare l’ordine. Riprova.'
+    );
+
+  }
+
 }
+
 render();
-</script><form name="ordini" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="bot-field">
-  <input name="nome"><input name="email"><input name="telefono"><input name="indirizzo"><input name="cap"><input name="citta"><input name="prodotti"><input name="totale">
-</form>
-</body></html>
+
+</script>
+
+</body>
+</html>
